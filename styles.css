@@ -1,0 +1,1007 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+@font-face {
+    font-family: myIntro;
+    src: url(fonts/OldschoolTag.ttf);
+}
+
+@font-face {
+    font-family: myName;
+    src: url(fonts/impact.ttf);
+}
+
+/*::-webkit-scrollbar {
+    display: none;
+  }*/
+
+
+body {
+    line-height: 1;
+    background-color: #f0f0f0;
+    /* Background color behind the grid */
+    background-image:
+        repeating-linear-gradient(#ccccccc5 0px, #ccc 1px, transparent 1px, transparent 20px),
+        /* Horizontal lines */
+        repeating-linear-gradient(90deg, #ccccccc5 0px, #ccc 1px, transparent 1px, transparent 20px);
+    /* Vertical lines */
+    background-size: 20px 20px;
+    /* Size of the grid squares */
+}
+
+
+
+/* Header and Navigation */
+header {
+    color: #fff;
+    padding: 10px 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+/* ---------------------------------------------------------------------------------------------*/
+/*NAVIGATION*/
+nav {
+    background-color: #dddddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 5px;
+    z-index: -1;
+}
+
+.logo {
+    background-color: #263A69;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.logo img {
+    display: block;
+    height: 70px;
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #263A69;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* ---------------------------------------------------------------------------------------------*/
+/*LANDING PAGE*/
+
+/* Sections */
+.section {
+    min-height: 100vh;
+    padding: 100px 20px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: start;
+}
+
+.about {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    /* Aligns items horizontally (center) */
+    align-items: center;
+    /* Aligns items vertically (center) */
+    height: 100vh;
+    /* Full viewport height */
+    width: 95vw;
+}
+
+/* Section Elements */
+.section-elements {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 90%;
+    justify-content: start;
+}
+
+.element {
+    flex: 1;
+    padding: 10px;
+    color: white;
+    text-align: start;
+}
+
+
+/* ---------------------------------------------------------------------------------------------*/
+/*ELEMENT 1*/
+/* Unique background colors for each element, across all sections */
+.element:nth-child(1) {
+    display: flex;
+    color: #000000;
+    flex-direction: column;
+    /* Align items vertically */
+    margin-top: 0px;
+    /* Center items vertically */
+    align-items: start;
+    /* Center items horizontally */
+    z-index: 2;
+}
+
+.element:nth-child(1) .greeting {
+    font-family: myIntro;
+    /* Use your custom font */
+    font-size: 3rem;
+    margin-left: 10px;
+    z-index: 1;
+    white-space: nowrap;
+}
+
+.element:nth-child(1) .name {
+    font-family: myName;
+    background-color: #263A69;
+    padding: 10px;
+    white-space: nowrap;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    font-size: 3.3rem;
+    /* Set the size you want */
+    margin-top: -10px;
+    /* Add some space between the lines */
+}
+
+.element:nth-child(1) .intro {
+    margin-top: 10%;
+    font-family: myText;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    margin-right: -30px;
+    line-height: 21px;
+    white-space: wrap;
+    text-align: justify;
+}
+
+.element:nth-child(1) .button-container {
+    display: flex;
+    /* Use flexbox to place buttons side by side */
+    justify-content: center;
+    /* Center the buttons */
+    margin-top: 20px;
+    gap: 30px;
+    /* Add space between the buttons */
+}
+
+.element:nth-child(1) .custom-button {
+    background-color: #263A69;
+    /* Button background color */
+    color: #ffffff;
+    font-family: myText;
+    /* Text color */
+    padding: 10px 10px;
+    border: none;
+    /* Remove the border */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 1rem;
+    /* Larger font size to make text overflow */
+    line-height: 1.2;
+    /* Adjust line height to control overflow */
+    cursor: pointer;
+    /* Show pointer on hover */
+    text-decoration: none;
+    /* Remove underline from link */
+    text-align: center;
+    /* Center the text inside the button */
+    overflow: visible;
+    /* Allow text to overflow */
+    white-space: nowrap;
+    /* Prevent text wrapping */
+    position: relative;
+    /* Required for positioning overflow text */
+    display: inline-block;
+    /* Keep buttons inline */
+    z-index: 1;
+    /* Ensure text appears above background */
+    transition: background-color 0.3s ease;
+    /* Smooth background transition */
+}
+
+.element:nth-child(1) .custom-button:hover {
+    background-color: #1c2e58;
+    /* Change background color on hover */
+}
+
+/* Additional styles to create visual overflow effect */
+.element:nth-child(1) .custom-button::before {
+    content: attr(name);
+    /* Duplicate the button text */
+    color: #000000;
+    font-family: myIntro;
+    position: absolute;
+    /* Position it outside the button */
+    top: 50px;
+    /* Adjust position to appear outside */
+    left: 70px;
+    font-size: 20px;
+    /* Match font size to button text */
+    white-space: nowrap;
+    /* Ensure no wrapping */
+    opacity: 1;
+    /* Transparent for subtle overflow effect */
+    z-index: -1;
+    /* Place behind the button */
+    pointer-events: none;
+    /* Disable interaction */
+}
+
+/* ---------------------------------------------------------------------------------------------*/
+.element:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1;
+}
+
+.home .element:nth-child(2) img {
+    margin-left: 50%;
+    max-width: 110%;
+    max-height: 110%;
+    margin-top: -90px;
+    /* Ensure the image doesn't overflow the container */
+    object-fit: contain;
+    /* Maintain the aspect ratio of the image */
+}
+
+/* Overlaying Element 1 on Element 2 in Section 1 */
+.home .element:nth-child(1) {
+    position: relative;
+    top: 0;
+    left: 50px;
+    z-index: 2;
+    /* Higher z-index to overlay */
+    width: 30%;
+    /* Adjust width as needed */
+}
+
+.home .element:nth-child(2) {
+    position: relative;
+    margin: 10px;
+    z-index: 1;
+    /* Lower z-index */
+    width: 90%;
+    /* Adjust width as needed */
+}
+
+.element:nth-child(3) img {
+    max-height: 80%;
+    max-width: 80%;
+    margin-top: -150px;
+
+}
+
+#subitem1 {
+    display: flex;
+    margin-left: 50px;
+    justify-content: start;
+    /* Center the content horizontally */
+    align-items: flex-start;
+    /* Align content to the top */
+    height: 100%;
+    /* Full height of the parent container */
+    flex-direction: column;
+    /* Stack elements vertically */
+    z-index: 1;
+}
+
+/* Updated styling for the vertical list */
+.vertical-list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 50px;
+    /* Space between each word */
+    z-index: 3;
+}
+
+
+/* Style for each horizontal word with arrows aligned to the right */
+.horizontal-word {
+    display: flex;
+    justify-content: space-between;
+    /* Space out text and arrow */
+    align-items: center;
+    /* Center align text and icon vertically */
+    font-size: 3rem;
+    /* Font size */
+    font-family: myIntro;
+    /* Font family */
+    color: #263A69;
+    /* Text color */
+    margin-left: 20px;
+    width: 100%;
+    /* Take up full width */
+}
+
+/* Styling for the arrow icon */
+.horizontal-word i {
+    visibility: visible;
+    /* Space between text and arrow icon */
+    font-size: 1.5rem;
+    /* Arrow icon size */
+    color: #263A69;
+    /* Arrow color */
+    /* Remove any additional margin on the right */
+}
+
+/* ------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------*/
+/* Social media icons styling */
+#subitem3 {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0px;
+    width: 98%;
+    height: 25%;
+    align-items: flex-end;
+    justify-content: flex-end;
+    z-index: 100000;
+}
+
+.social-icon {
+    color: #263A69;
+    font-size: 2rem;
+    margin: 5px 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #162446;
+}
+
+
+/* Vertical alignment of social icons */
+#item3 .vertical-items {
+    display: flex;
+    flex-direction: row;
+    /* Stack items vertically */
+    align-items: flex-end;
+    /* Center align the items */
+    height: 100%;
+    /* Full height of the container */
+}
+
+#item3 .vertical-item {
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    /* Adjust the font size for other items */
+}
+
+/*-------------------------------------------------------------------------------------------------*/
+
+
+.about .section-elements {
+    background-color: #dddddd;
+    display: grid;
+    margin-top: -100px;
+    padding: 20px;
+    grid-template-columns: auto auto auto;
+    /* Three columns with width based on content */
+    gap: 10px;
+    /* Adjust the space between the grid items */
+    align-items: start;
+    /* Align the grid items to the top */
+    justify-items: start;
+    /* Align items horizontally to the start */
+}
+
+.section-elements h1 {
+    align-items: flex-start;
+    margin-left: 50px;
+    font-size: 8rem;
+    text-align: center;
+    font-family: myName;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #1c2e58;
+}
+
+.about .section-elements h2 {
+    align-items: flex-start;
+    font-size: 3rem;
+    color: #263A69;
+    text-align: start;
+    font-family: myName;
+    margin-left: 50px;
+}
+
+.about .section-elements .element:nth-child(2) p {
+    font-size: 1rem;
+    margin-top: -60px;
+    text-align: justify;
+    color: #263A69;
+    font-weight: bold;
+    /* Justifies text left and right */
+    hyphens: auto;
+    /* Allows automatic hyphenation to break long words */
+    word-spacing: 0.05rem;
+    /* Adjusts the default spacing between words */
+    line-height: 1;
+    margin-left: 40px;
+    margin-right: 400px;
+    text-emphasis: none;
+
+}
+
+p:last-child {
+    text-align: left;
+    /* Align the last line of text to the left */
+}
+
+.about .section-elements .element:nth-child(3) p {
+    margin-left: -400px;
+    margin-top: 5px;
+    font-size: 1rem;
+    text-align: justify;
+    /* Justifies text left and right */
+    hyphens: manual;
+    /* Allows automatic hyphenation to break long words */
+    word-spacing: 0.05rem;
+    /* Adjusts the default spacing between words */
+    line-height: 1;
+    color: #263A69;
+    column-count: 2;
+    column-gap: 30px;
+
+}
+
+/*------------------------------------------------------------------------------------------------*/
+.work .section-elements h2 {
+    align-items: flex-start;
+    font-size: 3rem;
+    color: #263A69;
+    text-align: start;
+    font-family: myName;
+    margin-left: 70px;
+}
+
+.work .section-elements h1 {
+    margin-left: 70px;
+}
+
+
+/* Main grid container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* 7 columns */
+    gap: 10px;
+    padding: 20px;
+    max-width: 100%;
+    margin: auto;
+    margin-right: 20px;
+}
+
+/* Wrapper for each image */
+.grid-item {
+    width: 100%;
+    /* Takes full grid cell width */
+    height: 100%;
+    /* Takes full grid cell height */
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Image styling with fixed size and cover */
+.grid-item img {
+    width: 120px;
+    /* Fixed width */
+    height: 120px;
+    /* Fixed height */
+    object-fit: cover;
+    /* Crop excess to fit */
+    transition: transform 0.3s ease;
+}
+
+
+/* Overlay for enlarged image */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    color: white;
+}
+
+/* Enlarged image container */
+.overlay-content {
+    position: relative;
+    text-align: center;
+}
+
+.overlay-content img {
+    max-width: 70%;
+    max-height: 70vh;
+    transition: transform 0.3s ease;
+}
+
+/* Bullet points in overlay */
+.info-box {
+    margin-top: 15px;
+    list-style-type: disc;
+    text-align: left;
+}
+
+.date {
+    font-weight: bold;
+    text-align: center;
+    list-style-type: none;
+}
+
+.points {
+    padding-left: 20px;
+}
+
+.bold-centered {
+    font-weight: bold;
+    text-align: center;
+    list-style-type: none;
+    /* No bullet point */
+    font-size: 1.2em;
+    /* Optional: Increase font size */
+    margin-bottom: 10px;
+    /* Space below */
+}
+
+.clock-icon {
+    position: relative;
+    padding-left: 20px;
+    /* Space for the icon */
+    font-style: italic;
+    list-style-type: none;
+    /* No bullet point */
+    margin-bottom: 10px;
+    /* Space below */
+
+
+}
+
+.clock-icon::before {
+    content: '\f017';
+    /* Unicode for Font Awesome clock icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    /* Solid icon style */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(255, 255, 255);
+    /* Black color for the icon */
+}
+
+/* Navigation arrows */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 2em;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    z-index: 11;
+}
+
+.nav-arrow.left {
+    left: -50px;
+}
+
+.nav-arrow.right {
+    right: -50px;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 12;
+}
+
+/*----------------------------------------------------------------------------------------*/
+/* Element 1 */
+
+
+.extra .section-elements {
+    display: grid;
+    margin-top: -150px;
+    margin-right: 40px;
+    padding: 70px;
+    grid-template-columns: auto auto;
+    /* Three columns with width based on content */
+    /* Adjust the space between the grid items */
+    align-items: top;
+    /* Align the grid items to the top */
+    justify-items: flex-end;
+    /* Align items horizontally to the start */
+    justify-content: center;
+}
+
+.extra .section-elements h1 {
+    margin-left: 80px;
+}
+
+.extra .section-elements h2 {
+    position: relative;
+    margin-left: 80px;
+    font-size: 3rem;
+    color: #263A69;
+    text-align: start;
+    white-space: nowrap;
+    font-family: myName;
+    flex: 7;
+
+}
+
+/* Slideshow Container */
+#portfolio-section {
+    background-color: #ccc;
+    margin-right: 50px;
+    margin-left: 40px;
+    padding: 10px 20px 10px 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 870px;
+    /* Adjust based on your layout */
+}
+
+/* Styling for three-column layout */
+.portfolio-row {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.portfolio-column {
+    flex: 1;
+    text-align: center;
+}
+.portfolio-title{
+    margin-bottom: 10px;
+    color: #263A69;
+    font-size: 20px;
+}
+.portfolio-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.portfolio-description {
+    width: 100%;
+    height: auto;
+    text-align: justify;
+    margin-top: 10px;
+    color: #263A69;
+}
+
+.read-more{
+    background-color: #263A69;
+    cursor: pointer;
+    border:none;
+    border-radius:10px;
+    color: white;
+    margin-top: 20px;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    
+    font-size: 16px;
+}
+
+/* Modal styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+    display: none; /* Keep it hidden until triggered by JavaScript */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.modal-content {
+   
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #263A69;
+    width: 400px;
+    height: auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.slideshow-controls {
+    margin-top: 15px;
+}
+
+#slideshow-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/*-------------------------------------------------------------------------*/
+.evaluation {
+    background-color: #dddddd;
+
+}
+
+.evaluation .section-elements {
+    display: grid;
+    margin-top: -100px;
+    margin-left: -15px;
+    padding: 20px;
+    grid-template-columns: auto auto auto;
+    /* Three columns with width based on content */
+    gap: 10px;
+    /* Adjust the space between the grid items */
+    align-items: start;
+    /* Align the grid items to the top */
+    justify-items: start;
+    /* Align items horizontally to the start */
+}
+
+.evaluation .section-elements h2 {
+
+    align-items: flex-start;
+    margin-left: 50px;
+    font-size: 3rem;
+    color: #263A69;
+    text-align: start;
+    font-family: myName;
+
+}
+
+.evaluation .section-elements p {
+    font-size: 1rem;
+    background-color: #dddddd;
+    height: auto;
+    padding: 10px;
+    margin-left: -150px;
+    text-align: justify;
+    /* Justifies text left and right */
+    color: #263A69;
+
+}
+
+/* Style for the overall section */
+#info-section {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Style for each subsection */
+.subsection {
+    display: flex;
+    /* Flexbox to divide into two columns */
+    flex-direction: row;
+    padding: 10px;
+    background-color: #f9f9f9;
+    /* Optional background color */
+    margin-left: 10px;
+    margin-right: -20px;
+
+}
+
+/* Left column styling (for titles) */
+.left-column {
+    flex: 1;
+    /* Make it take up half the width */
+    white-space: wrap;
+    font-style: italic;
+    margin-right: 150px;
+    padding: 10px;
+    font-size: 15px;
+    /* Font size for the title */
+}
+
+/* Right column styling (for text) */
+.right-column {
+    flex: 2;
+    /* Make it take up twice the width of the title */
+    padding: 10px;
+    font-size: 16px;
+    /* Font size for the text */
+
+    color: #333;
+}
+
+/*-------------------------------------------------------------------------------------------------*/
+/* Style for the copyright text */
+.copyright {
+    position: fixed;
+    bottom: 10px;
+    /* Adjust as needed */
+    left: 20px;
+    /* Align to the left */
+    transform: rotate(-90deg);
+    /* Rotate 90 degrees counterclockwise */
+    transform-origin: left bottom;
+    /* Set the origin for rotation */
+    font-size: 0.7rem;
+    color: #33333355;
+    font-family: Arial, sans-serif;
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+}
+
+/*-------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav {
+        position: relative;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        text-align: right;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 15px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Stack section elements vertically on mobile */
+    .section-elements {
+        flex-direction: column;
+    }
+
+    /* Disable absolute positioning in mobile mode */
+    .home .element:nth-child(1),
+    .home .element:nth-child(2) {
+        position: static;
+        /* No overlaying on mobile */
+        width: 100%;
+    }
+
+    .intro {
+        position: relative;
+        width: 100%;
+    }
+
+    .element:nth-child(2) img {
+        max-width: 60%;
+        max-height: 60%;
+
+    }
+
+    .home .element:nth-child(1) {
+        position: relative;
+        top: 0;
+        left: 30px;
+        z-index: 2;
+        /* Higher z-index to overlay */
+        width: 90%;
+        /* Adjust width as needed */
+    }
+
+    .home .element:nth-child(1) .name {
+        font-size: 3rem;
+    }
+
+    .home .element:nth-child(1) .intro {
+        width: 65%;
+    }
+
+    .home .element:nth-child(2) {
+        position: absolute;
+        left: 200px;
+        bottom: -50px;
+        margin: 10px;
+        z-index: 1;
+        /* Lower z-index */
+        width: 70%;
+        /* Adjust width as needed */
+    }
+
+    #subitem1 {
+        display: flex;
+        justify-content: center;
+        /* Center the content horizontally */
+        align-items: flex-start;
+
+        /* Align content to the top */
+        height: 100%;
+        /* Full height of the parent container */
+        flex-direction: column;
+        /* Stack elements vertically */
+        z-index: 1;
+        margin-top: 0%;
+        margin-left: 5%;
+    }
+
+    .horizontal-word i {
+        visibility: hidden;
+    }
+}
