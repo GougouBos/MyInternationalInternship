@@ -194,6 +194,13 @@ prevArrow.addEventListener('click', prevImage);
 nextArrow.addEventListener('click', nextImage);
 closeBtn.addEventListener('click', closeOverlay);
 
+// Close overlay when clicking outside of the image
+overlay.addEventListener('click', function(event) {
+  if (event.target === overlay) {
+    closeOverlay();
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("slideshow-modal");
   const closeButton = document.querySelector(".close-button");
